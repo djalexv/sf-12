@@ -1,13 +1,16 @@
 public class Cat {
+//    public static String catCount;
     //Ниже идут поля класса
     private double weight;
     private String name;
     private int age;
     private String color;
+    private static int catCount;
 
     public Cat() {
-        this(3000,"Barsik", 1, "Grey");
+        this(3000, "Barsik", 1, "Grey");
     }
+
     //Конструктор
     public Cat(double weight,
                String name,
@@ -17,9 +20,26 @@ public class Cat {
         this.name = name;
         this.age = age;
         this.color = color;
+        catCount++; //Увеличиваем счётчик кошек
     }
 
-    //Ниже идут методы
+    public   static int getCatCount() {
+        return catCount;
+    }
+
+    public static void setCatCount(int catCount) {
+        Cat.catCount = catCount;
+    }
+
+    public void feed(double foodAmount) {
+        if (foodAmount < 1000) {
+            System.out.println("Кошку покормили! Она довольна!");
+        } else {
+            System.out.println("Кошку перекормили и она лопнула.");
+            catCount--;
+        }
+    }
+
     public void meow() {
         System.out.println("Meow");
     }
