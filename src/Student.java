@@ -1,35 +1,36 @@
-public class Student {
-    private String firstName;
-    private String surName;
-    private int age;
-    private boolean ixPerience;
+public class Student extends Person {
+    private boolean expirienced;
     private String trainingPurpose;
     private int groupNumber;
     private int passedModuleCount;
-    private int closedTasks;
+    private int taskCount;
+    private String about;
     public static int taskCountForAll;
     public static int maxClosedModuls;
     public static final int MAX_MODULES_COUNT = 20;
 
-    public Student(String firstName, String surName, int age) {
-        this(firstName, surName, age, false, "", 0, 0, 0);
+    public Student(String name, String surName, int age) {
+        this(name, surName, age, false, "", 0, 0, 0);
     }
 
-    public Student(String firstName, String surName, int age, boolean ixPerience, String trainingPurpose,
-                   int groupNumber, int passedModuleCount, int closedTasks) {
-        this.firstName = firstName;
-        this.surName = surName;
-        this.age = age;
-        this.ixPerience = ixPerience;
+    @Override
+    public void setAbout() {
+        this.about = "";
+    }
+
+    public Student(String name, String surName, int age, boolean expirienced, String trainingPurpose,
+                   int groupNumber, int passedModuleCount, int taskCount) {
+        super(name, surName, age);
+        this.expirienced = expirienced;
         this.trainingPurpose = trainingPurpose;
         this.groupNumber = groupNumber;
         this.passedModuleCount = passedModuleCount;
-        this.closedTasks = closedTasks;
+        this.taskCount = taskCount;
     }
 
     public void solveTask() {
-        System.out.println("Задание завершенщ");
-        closedTasks++;
+        System.out.println("Задание завершено");
+        taskCount++;
         taskCountForAll++;
     }
 
@@ -39,27 +40,15 @@ public class Student {
             passedModuleCount++;
             if (passedModuleCount > maxClosedModuls) {
                 maxClosedModuls = passedModuleCount;
-            }else {
+            } else {
                 System.out.println("Все модули пройдены!");
             }
 
         }
     }
 
-    public String getSurName() {
-        return surName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public boolean isIxPerience() {
-        return ixPerience;
+    public boolean isExpirienced() {
+        return expirienced;
     }
 
     public String getTrainingPurpose() {
@@ -74,8 +63,8 @@ public class Student {
         return passedModuleCount;
     }
 
-    public int getClosedTasks() {
-        return closedTasks;
+    public int getTaskCount() {
+        return taskCount;
     }
 
     public void completeTheTask() {
@@ -94,8 +83,8 @@ public class Student {
 
     }
 
-    public void setIxPerience(boolean ixPerience) {
-        this.ixPerience = ixPerience;
+    public void setExpirienced(boolean expirienced) {
+        this.expirienced = expirienced;
     }
 
     public void setTrainingPurpose(String trainingPurpose) {
@@ -110,7 +99,7 @@ public class Student {
         this.passedModuleCount = passedModuleCount;
     }
 
-    public void setClosedTasks(int closedTasks) {
-        this.closedTasks = closedTasks;
+    public void setTaskCount(int taskCount) {
+        this.taskCount = taskCount;
     }
 }

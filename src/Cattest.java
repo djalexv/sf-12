@@ -1,4 +1,4 @@
-public class test {
+public class Cattest {
     public static void main(String[] args) {
 
         Cat cat;
