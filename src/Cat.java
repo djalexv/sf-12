@@ -1,4 +1,6 @@
-public class Cat {
+import java.util.Objects;
+
+public class Cat implements Cloneable {
 //    public static String catCount;
     //Ниже идут поля класса
     private double weight;
@@ -22,7 +24,10 @@ public class Cat {
         this.color = color;
         catCount++; //Увеличиваем счётчик кошек
     }
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(weight, name, age, color);
+    }
     public   static int getCatCount() {
         return catCount;
     }
@@ -83,4 +88,15 @@ public class Cat {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public Object clone() throws CloneNotSupportedException {
+        // Мы должны вызвать метод базового класса,
+        // чтобы гарантировать, что возвращаемое значение
+        // будет именно того типа, у экземпляра которого
+        // вызван метод clone().
+        Object result = (Cat) super.clone(); //Приведение типов
+        return result;
+    }
+
+
 }

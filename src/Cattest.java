@@ -1,15 +1,18 @@
+import java.util.Objects;
 public class Cattest {
     public static void main(String[] args) {
 
-        Cat cat;
-        for (int i = 0; i < 10; i++) {
-
-            cat = new Cat();
-            if (i % 3 == 0) {
-                cat.feed(1100);
-            }
-        }
-        System.out.println("Количество кошек: " + Cat.getCatCount());
+        Cat cat0 =new Cat();
+        Cat cloneCat = new Cat();
+//        cloneCat = cat0.clone();
+//        for (int i = 0; i < 10; i++) {
+//
+//            cat = new Cat();
+//            if (i % 3 == 0) {
+//                cat.feed(1100);
+//            }
+//        }
+//        System.out.println("Количество кошек: " + Cat.getCatCount());
     }
 
     /*    public static void main(String[] args) {

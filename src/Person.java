@@ -1,7 +1,7 @@
 public abstract class Person {
-    private String name;
-    private String surName;
-    private int age;
+    public String name;
+    public String surName;
+    public int age;
 
     public Person(String name, String surName, int age) {
         this.name = name;
@@ -9,6 +9,7 @@ public abstract class Person {
         this.age = age;
     }
 
+/*
     public String getName() {
         return name;
     }
@@ -32,5 +33,6 @@ public abstract class Person {
     public void setAge(int age) {
         this.age = age;
     }
+*/
     abstract public void setAbout();
 }
