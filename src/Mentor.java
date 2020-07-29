@@ -1,10 +1,7 @@
-public class Mentor extends Person{
+class Mentor extends Person {
 
-    public Mentor(String name, String surName, int age) {
-        super(name, surName, age);
+    Mentor(String name, int age) {
+        super(name, age);
     }
 
-    public void setAbout() {
-
-    }
 }

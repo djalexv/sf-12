@@ -1,9 +1,9 @@
-public class WriteCode extends Task {
-    public WriteCode(boolean solved) {
-        super(solved);
+public class WriteCode {
+    public void WriteCode() {
+//        super(solved);
     }
 
-    @Override
+/*    @Override
     public String getTypeOfTask() {
         return "WriteCode";
     }
@@ -16,5 +16,5 @@ public class WriteCode extends Task {
     @Override
     public boolean checkAutomatically() {
         return false;
-    }
+    }*/
 }

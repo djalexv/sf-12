@@ -1,20 +1,12 @@
-public class Test extends Task {
-    public Test(boolean solved) {
-        super(solved);
+class Test extends Task implements Autochecked{
+    String[] answerArray;
+    public Test(int taskNumber) {
+        super(taskNumber, "Test");
+        this.answerArray = new String[] {"a", "b", "c"};
     }
 
     @Override
-    public String getTypeOfTask() {
-        return "Test";
-    }
-
-    @Override
-    public void setTypeOfTask(String typeOfTask) {
-        this.typeOfTask = this.getTypeOfTask();
-    }
-
-    @Override
-    public boolean checkAutomatically() {
+    public boolean isCheckAutomatically() {
         return true;
     }
 }

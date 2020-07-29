@@ -1,20 +1,22 @@
-abstract public class Task implements Autochecked{
-    public boolean solved;
-    public String typeOfTask;
+import java.awt.print.Printable;
 
-    public Task(boolean solved) {
-        this.solved = solved;
+abstract public class Task {
+    int taskNumber;
+    String typeOfTask;
+    String textOffTask;
+
+    public Task(int taskNumber, String typeOfTask) {
+        this.taskNumber = taskNumber;
+        this.textOffTask = typeOfTask;
+        this.textOffTask = taskNumber + ") "+typeOfTask + " - Текст задания ";
     }
 
-    abstract public String getTypeOfTask();
-
-    abstract public void setTypeOfTask(String typeOfTask);
-
-//    public boolean isSolved() {
-//        return solved;
-//    }
-//
-//    public void setSolved(boolean solved) {
-//        this.solved = solved;
-//    }
+    @Override
+    public String toString() {
+        return "Task{" +
+                "taskNumber=" + taskNumber +
+                ", typeOfTask='" + typeOfTask + '\'' +
+                ", textOffTask='" + textOffTask + '\'' +
+                '}';
+    }
 }

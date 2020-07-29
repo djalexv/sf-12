@@ -1,20 +1,12 @@
-public class DragAndDrop extends  Task {
-    public DragAndDrop(boolean solved) {
-        super(solved);
+public class DragAndDrop extends Task implements Autochecked {
+ String [][] varArray;
+    public DragAndDrop(int taskNumber) {
+        super(taskNumber,"DragAndDrop");
+        this.varArray = new String[][] {{"1","2", "3"},{"a", "b", "c"}} ;
     }
 
     @Override
-    public String getTypeOfTask() {
-        return "DragAndDrop";
-    }
-
-    @Override
-    public void setTypeOfTask(String typeOfTask) {
-        this.typeOfTask = this.getTypeOfTask();
-    }
-
-    @Override
-    public boolean checkAutomatically() {
+    public boolean isCheckAutomatically() {
         return true;
     }
 }
